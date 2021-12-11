@@ -1,0 +1,20 @@
+<section
+  class='question-container p-6 relative w-full flex items-center'
+  id={{this.questionIndexId}}
+>
+  {{#if this.isTextQuestion}}
+    <TextQuestion
+      @question={{@question}}
+      @index={{@index}}
+      @submitText={{this.submitText}}
+      @submitAnswer={{@submitAnswer}}
+    />
+  {{else}}
+    <MultiSelectQuestion
+      @question={{@question}}
+      @index={{@index}}
+      @submitText={{this.submitText}}
+      @submitAnswer={{@submitAnswer}}
+    />
+  {{/if}}
+</section>

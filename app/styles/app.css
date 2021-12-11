@@ -1,0 +1,37 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --body-bg-color: #fafafa;
+}
+
+body {
+  font-size: inherit;
+  background-color: var(--body-bg-color);
+  overflow: hidden;
+}
+
+.questionnaire {
+  transition: transform 500ms ease;
+}
+
+.start-page-label {
+  word-spacing: 0.3rem;
+  font-weight: 500;
+}
+
+.question-container {
+  flex: 1 0 100%;
+}
+
+.background-mesh {
+  /* TODO: seperate class for darkmode */
+  background-color: #e5e5f7;
+  background-image: linear-gradient(#ffffff 2px, transparent 2px),
+    linear-gradient(90deg, #ffffff 2px, transparent 2px),
+    linear-gradient(#ffffff 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff 1px, #f5f5f7 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}

@@ -1,0 +1,31 @@
+<form
+  class='relative container mx-auto flex flex-col justify-start h-screen questionnaire'
+  id='questionnaire'
+>
+  {{! START PAGE }}
+  {{#if this.isStartPage}}
+    <section
+      class='w-full h-screen flex flex-col justify-center items-center p-6'
+    >
+      <legend
+        class='text-2xl mb-12 leading-normal text-gray-700 start-page-label'
+      >
+        {{@questionnaire.description}}
+      </legend>
+      <SubmitButton @class='w-1/2' @type='button' {{on 'click' this.beginForm}}>
+        Start!
+      </SubmitButton>
+    </section>
+  {{else}}
+    {{! QUESTIONS }}
+    {{#each @questionnaire.questions key='id' as |question index|}}
+      <QuestionContainer
+        @question={{question}}
+        @index={{index}}
+        @numberOfQuestions={{this.numberOfQuestions}}
+        @submitAnswer={{this.handleSubmit}}
+      />
+    {{/each}}
+  {{/if}}
+
+</form>

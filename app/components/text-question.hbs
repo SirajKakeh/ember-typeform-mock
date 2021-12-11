@@ -1,0 +1,21 @@
+<fieldset class="flex flex-col">
+  <label for={{this.question.identifier}}>
+    <p class='text-2xl mb-6'>
+      <span>{{this.questionNumber}}- </span>
+      <span>{{this.question.headline}}</span>
+    </p>
+    <Input
+      id={{this.question.identifier}}
+      @type='text'
+      class='border border-blue-500 h-10 w-full pl-4'
+    />
+  </label>
+  <SubmitButton
+    @type='button'
+    class='mt-6 w-1/3'
+    {{on 'click' (fn @submitAnswer @question @index)}}
+  >
+    {{@submitText}}
+  </SubmitButton>
+
+</fieldset>
